@@ -4,28 +4,14 @@
 
 int main(void)
 {
-
-	/*	int input = 5;
-	int counter = 8;
-	for(int i = 0; i< 8; i++)
-	{
-		int mod = 2;
-		int temp = input%mod;
-		if(temp == 1)
-			
-		
-	}*/
 	
-	unsigned int input = 5;
+	unsigned int input = 123;
 	
 	int LEDnum = 8;
 	unsigned int shift = input;
 	int count;
 	
-	
 	SystemInit();
-	
-	printf("Hello\n");
 	
 	LPC_GPIO2->FIODIR |= 1<<6;
 	LPC_GPIO2->FIODIR |= 1<<5;
@@ -38,62 +24,40 @@ int main(void)
 	
 	for(count = 0; count < LEDnum; count++){
 		int remainder = shift%2;
+		printf("\n Remainder: %d", remainder);
 		if(remainder == 1)
 		{
-			if(count == 0)
-			{
+			if(count == 0)		
 				LPC_GPIO2->FIOSET |= 1<<6;
-				printf("---0---");
-			}
 			if(count == 1)
-			{
 				LPC_GPIO2->FIOSET |= 1<<5;
-				printf("1");
-			}
 			if(count == 2)
-			{
 				LPC_GPIO2->FIOSET |= 1<<4;
-				printf("2");
-			}
 			if(count == 3)
-			{
 				LPC_GPIO2->FIOSET |= 1<<3;
-				printf("3");
-			}
 			if(count == 4)
-			{
 				LPC_GPIO2->FIOSET |= 1<<2;
-			printf("4");
-			}
-		
 			if(count == 5)
-			{
 				LPC_GPIO1->FIOSET |= 1<<31;
-				printf("5");
-			}
-
 			if(count == 6)
-			{
 				LPC_GPIO1->FIOSET |= 1<<29;
-				printf("6");
-			}
-
 			if(count == 7)
-			{
 				LPC_GPIO1->FIOSET |= 1<<28;
-				printf("7");
-			}
-
 			
 		}
+		shift = shift >> 1;
 		
-		shift = input >> 1;
 		printf("\n shift: %d for count: %d", shift, count);
 			
 	}
 
 
-	while(1);
+	while(1){
+
+		unsigned int pin = LPC_GPIO1->FIOPIN & 1<<20;
+		if(!pin)
+			printf("Pin 20: Pressed");
+	};
 	
 		
 }

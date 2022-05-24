@@ -29,24 +29,24 @@ Project File Date:  05/24/2022
 Rebuild target 'Target 1'
 compiling Retarget.c...
 compiling p2_main.c...
-p2_main.c(35): warning:  #61-D: integer operation result is out of range
+p2_main.c(21): warning:  #61-D: integer operation result is out of range
   	LPC_GPIO1->FIODIR |= 1<<31;
-p2_main.c(35): warning:  #68-D: integer conversion resulted in a change of sign
+p2_main.c(21): warning:  #68-D: integer conversion resulted in a change of sign
   	LPC_GPIO1->FIODIR |= 1<<31;
-p2_main.c(71): warning:  #61-D: integer operation result is out of range
+p2_main.c(41): warning:  #61-D: integer operation result is out of range
   				LPC_GPIO1->FIOSET |= 1<<31;
-p2_main.c(71): warning:  #68-D: integer conversion resulted in a change of sign
+p2_main.c(41): warning:  #68-D: integer conversion resulted in a change of sign
   				LPC_GPIO1->FIOSET |= 1<<31;
 p2_main.c: 4 warnings, 0 errors
 compiling uart.c...
+compiling GLCD_Scroll.c...
 compiling GLCD_SPI_LPC1700.c...
 compiling rtx_lib.c...
-compiling GLCD_Scroll.c...
-assembling startup_LPC17xx.s...
 compiling RTX_Config.c...
+assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
 linking...
-Program Size: Code=5336 RO-data=524 RW-data=9764 ZI-data=8324  
+Program Size: Code=5296 RO-data=524 RW-data=9764 ZI-data=8324  
 ".\Objects\MTE241Lab2.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -102,7 +102,7 @@ Package Vendor: Keil
       Include file:  RTE_Driver\Config\RTE_Device.h
       Include file:  Device\Include\LPC17xx.h
       Source file:   Device\Source\ARM\startup_LPC17xx.s
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
